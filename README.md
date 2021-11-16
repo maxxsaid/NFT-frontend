@@ -14,19 +14,19 @@ Styling - Max
 
 # Models
 
--name
--image_url
--external link
--description
--traits
--stats
+- name
+- image_url
+- external link
+- description
+- traits
+- stats
 
 # Tech
 
--Mongoose
--Express
--react-router-dom
--sass
--cors
--dotenv
--morgan
+- Mongoose
+- Express
+- react-router-dom
+- sass
+- cors
+- dotenv
+- morgan
