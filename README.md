@@ -9,3 +9,22 @@ Frontend - Max and Raymond
 Frontend Repo Owner - Max
 Backend Repo Owner - John
 Styling - Max
+
+# Models
+
+--name
+--image_url
+--external link
+--description
+--traits
+--stats
+
+# Tech
+
+--Mongoose
+--Express
+--react-router-dom
+--sass
+--cors
+--dotenv
+--morgan
