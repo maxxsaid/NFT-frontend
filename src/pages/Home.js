@@ -45,7 +45,7 @@ function Home() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="https://lh3.googleusercontent.com/MOTky0MclLJ9gCtij24Sjz0yfer_DTwly2WPL6hKEUgByd9V_tSiRw0bn8e5isnDaOCN5XHrXuSCuGymYZazrc2zYh5OZNr3oz-KaUniwHC5kLZ5PDh7wRYB8uH6OX646wldn0VA"
+              src="https://cdn.statically.io/img/i.pinimg.com/originals/0b/2c/0b/0b2c0b5a6d44960b3c1a40a929c8160f.png"
               className="d-block w-100"
               alt="image1"
             />
