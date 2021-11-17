@@ -6,8 +6,8 @@ This application provides the user a storage of all the NFTs. User gets to sign 
 
 # Roles
 
-- Backend - Rashad and John
-- Frontend - Max and Raymond
+- Backend - John,Rashad,Ray
+- Frontend - Max,Rashad,Ray
 - Frontend Repo Owner - Max
 - Backend Repo Owner - John
 - Styling - Max
