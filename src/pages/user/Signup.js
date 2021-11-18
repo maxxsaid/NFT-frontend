@@ -2,7 +2,7 @@ function Signup() {
   return (
     <div className="signupPage">
       <div>
-        <form action="/user/signup" method="post">
+        <form action="/signup" method="post">
           <fieldset>
             <legend>
               <h2>New User</h2>

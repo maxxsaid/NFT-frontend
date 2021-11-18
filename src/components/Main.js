@@ -1,66 +1,59 @@
-import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
-import Index from "../pages/Index";
-import Show from "../pages/Show";
+// import { useEffect, useState } from "react";
+import { Route } from "react-router-dom";
+import React from "react";
+import Nfts from "./Nft";
+import Login from "../pages/user/Login";
 
-const Nfts = (props) => {
-  const [nfts, setNfts] = useState(null);
-  const URL = "";
+function Main(props) {
+  const [token, setToken] = React.useState({});
 
-  const getNfts = async () => {
-    const response = await fetch(URL);
-    const data = await response.json();
-    setNfts(data);
-  };
-  const createNfts = async (nft) => {
-    await fetch(URL, {
+  const URL = "https://nft-backennd.herokuapp.com/";
+
+  const getToken = async (un, pw) => {
+    const response = await fetch(URL + "api/token/", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(nft),
+      body: JSON.stringify({ username: un, password: pw }),
     });
-    getNfts();
-  };
-  const updateNfts = async (nft, id) => {
-    await fetch(URL + id, {
-      method: "put",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(nft),
-    });
-    getNfts();
-  };
-  const deleteNfts = async (id) => {
-    await fetch(URL + id, {
-      method: "delete",
-    });
-    getNfts();
+    const data = await response.json();
+    console.log(data);
+    setToken(data);
+    localStorage.setItem("token", JSON.stringify(data));
   };
 
-  useEffect(() => {
-    getNfts();
+  React.useEffect(() => {
+    const possibleToken = JSON.parse(localStorage.getItem("token"));
+    if (possibleToken) {
+      setToken(possibleToken);
+    }
   }, []);
 
-  return (
-    <main>
-      <Routes>
-        <Route path="/" element={<Home nfts={nfts} />} />
-        <Route
-          path="/{username}"
-          element={<Index nfts={nfts} createNfts={createNfts} />}
-        />
-        <Route
-          path="/{username}/:id"
-          element={
-            <Show nfts={nfts} updateNfts={updateNfts} deleteNfts={deleteNfts} />
-          }
-        />
-      </Routes>
-    </main>
-  );
-};
+  React.useEffect(() => {
+    if (token.access) {
+      props.history.push("/index");
+    } else {
+      props.history.push("/user/signup");
+    }
+  }, [token.access]);
 
-export default Nfts;
+  return (
+    <div className="main">
+      <h1>NFT App</h1>
+
+      <Route
+        exact
+        path="/"
+        render={(rp) => <Login getToken={getToken} {...rp} />}
+      />
+
+      <Route
+        path="/index"
+        render={(rp) => <Nfts tokens={token} URL={URL} {...rp} />}
+      />
+    </div>
+  );
+}
+
+export default Main;
