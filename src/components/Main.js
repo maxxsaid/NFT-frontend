@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+// import { useEffect, useState } from "react";
 import { Route } from "react-router-dom";
 import React from "react";
-import Login from "./pages/Login";
 import Nfts from "./Nft";
+import Login from "../pages/user/Login";
 
 function Main(props) {
   const [token, setToken] = React.useState({});

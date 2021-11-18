@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
+import Login from "./user/Login";
+import Signup from "./user/Signup";
 
 function Home() {
   return (
     <div className="App">
       <div className="loginHome">
-        <Link to="/user/signup">
+        <Link to="/signup">
           <button type="submit" className="btn btn-outline-dark">
             Signup
           </button>
         </Link>
-        <Link to="/user/login">
+        <Link to="/login">
           <button type="submit" className="btn btn-outline-dark">
             Login
           </button>

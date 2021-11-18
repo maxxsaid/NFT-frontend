@@ -1,3 +1,4 @@
+import React from "react";
 const Nfts = (props) => {
   const [nfts, setNfts] = React.useState(null);
 
