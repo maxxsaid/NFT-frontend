@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="App">
-      <div className="login">
+      <div className="loginHome">
         <Link to="/user/signup">
           <button type="submit" className="btn btn-outline-dark">
             Signup
