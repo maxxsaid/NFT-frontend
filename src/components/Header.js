@@ -4,7 +4,7 @@ function Header(props) {
   return (
     <nav className="nav">
       <Link to="/">
-        <div>NFT App</div>
+        <h1 className="logo">brag</h1>
       </Link>
     </nav>
   );
