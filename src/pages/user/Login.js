@@ -16,7 +16,13 @@ const Login = (props) => {
 
   return (
     <div>
+      <label for="username" className="form-label">
+        <h4>Username</h4>
+      </label>
       <input type="text" name="username" ref={username} />
+      <label for="password" className="form-label">
+        <h4>Username</h4>
+      </label>
       <input type="password" name="password" ref={password} />
       <button onClick={handleLogin}>Login</button>
     </div>

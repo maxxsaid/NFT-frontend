@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
 import Login from "./user/Login";
 import Signup from "./user/Signup";
 
@@ -7,13 +6,16 @@ function Home() {
   return (
     <div className="App">
       <div className="loginHome">
-        <Button component={Link} to="/signup">
-          Signup
-        </Button>
-
-        <Button component={Link} to="/login">
-          Login
-        </Button>
+        <Link to="/signup">
+          <button type="submit" className="btn btn-outline-dark">
+            Signup
+          </button>
+        </Link>
+        <Link to="/login">
+          <button type="submit" className="btn btn-outline-dark">
+            Login
+          </button>
+        </Link>
       </div>
       <div
         id="carouselExampleIndicators"
