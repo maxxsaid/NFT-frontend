@@ -4,7 +4,7 @@ import Signup from "./user/Signup";
 
 function Home() {
   return (
-    <div className="App">
+    <div className="home">
       <div className="loginHome">
         <Link to="/signup">
           <button type="submit" className="btn btn-outline-dark">
