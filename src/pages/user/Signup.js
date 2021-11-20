@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Signup() {
   return (
     <div className="signupPage">
@@ -18,7 +20,7 @@ function Signup() {
                 aria-describedby="usernameHelpBlock"
               />
             </label>
-            <div id="usernameHelpBlock" className="form-text">
+            <div id="usernameHelpBlock" className="p1 form-text">
               Your username must be 1-20 characters long and lowercase.
             </div>
             <div class="pass">
@@ -33,7 +35,7 @@ function Signup() {
                   aria-describedby="passwordHelpBlock"
                 />
               </label>
-              <div id="passwordHelpBlock" className="form-text">
+              <div id="passwordHelpBlock" className="p1 form-text">
                 Your password must be 1-20 characters long, contain letters and
                 numbers, and must not contain spaces, special characters, or
                 emoji.
@@ -41,11 +43,21 @@ function Signup() {
             </div>
             <button
               type="submit"
-              className="btn btn-outline-dark"
+              className="createacc btn btn-primary"
               value="Create Account"
             >
               Create Account
             </button>
+            <div className="signLog">
+              <div id="passwordHelpBlock" className="p1 form-text">
+                Already have an account?
+              </div>
+              <Link to="/login">
+                <button type="submit" className="btn btn-success">
+                  Login
+                </button>
+              </Link>
+            </div>
           </fieldset>
         </form>
       </div>
