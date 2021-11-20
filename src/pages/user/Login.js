@@ -15,16 +15,34 @@ const Login = (props) => {
   };
 
   return (
-    <div>
-      <label for="username" className="form-label">
-        <h4>Username</h4>
-      </label>
-      <input type="text" name="username" ref={username} />
-      <label for="password" className="form-label">
-        <h4>Username</h4>
-      </label>
-      <input type="password" name="password" ref={password} />
-      <button onClick={handleLogin}>Login</button>
+    <div className="loginPage">
+      <div className="mb-3">
+        <label for="username" className="form-label">
+          <h4>Username</h4>
+        </label>
+        <input
+          className="form-control"
+          type="text"
+          name="username"
+          ref={username}
+        />
+      </div>
+      <div className="mb-3">
+        <label for="password" className="form-label">
+          <h4>Password</h4>
+        </label>
+        <input
+          className="form-control"
+          type="password"
+          name="password"
+          ref={password}
+        />
+        <div className="btnloginpage">
+          <button className="btn btn-primary" onClick={handleLogin}>
+            Login
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
