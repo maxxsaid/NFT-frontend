@@ -51,49 +51,49 @@ const Show = (props) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={newForm.name}
+          value={editForm.name}
           name="name"
           placeholder="Name"
           onChange={handleChange}
         />
         <input
           type="number"
-          value={newForm.sales}
+          value={editForm.sales}
           name="sales"
           placeholder="Sales"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.img}
+          value={editForm.img}
           name="image"
           placeholder="Image URL"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.site}
+          value={editForm.site}
           name="site"
           placeholder="External Link"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.slug}
+          value={editForm.slug}
           name="slug"
           placeholder="Slug"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.description}
+          value={editForm.description}
           name="description"
           placeholder="Description"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.date_created}
+          value={editForm.date_created}
           name="date_created"
           placeholder="Date Created"
           onChange={handleChange}
