@@ -57,17 +57,31 @@ const Show = (props) => {
           onChange={handleChange}
         />
         <input
+          type="number"
+          value={newForm.sales}
+          name="sales"
+          placeholder="Sales"
+          onChange={handleChange}
+        />
+        <input
           type="text"
-          value={newForm.image_url}
+          value={newForm.img}
           name="image"
           placeholder="Image URL"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.external_link}
-          name="external link"
+          value={newForm.site}
+          name="site"
           placeholder="External Link"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          value={newForm.slug}
+          name="slug"
+          placeholder="Slug"
           onChange={handleChange}
         />
         <input
@@ -79,16 +93,9 @@ const Show = (props) => {
         />
         <input
           type="text"
-          value={newForm.traits}
-          name="traits"
-          placeholder="Traits"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.stats}
-          name="stats"
-          placeholder="Stats"
+          value={newForm.date_created}
+          name="date_created"
+          placeholder="Date Created"
           onChange={handleChange}
         />
         <input class="btn btn-warning" type="submit" value="Update brag" />
@@ -98,13 +105,13 @@ const Show = (props) => {
     return (
       <div className="site">
         <h2>{nft.name}</h2>
-        <img src={nft.name} alt="image url" />
-        <a href={nft.external_link} target="_blank">
+        <img src={nft.img} alt="image url" />
+        <a href={nft.site} target="_blank">
           <h2>External Link</h2>
         </a>
+        <p>{nft.slug}</p>
         <p>{nft.description}</p>
-        <p>{nft.traits}</p>
-        <p>{nft.stats}</p>
+        <p>{nft.date_created}</p>
         {form}
         <button class="btn btn-danger" onClick={removeNft}>
           DELETE NFT

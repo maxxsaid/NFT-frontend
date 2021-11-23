@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 const Index = (props) => {
   // state to hold form data
   const [newForm, setNewForm] = useState({
-    name: "",
-    image_url: "",
-    external_link: "",
-    description: "",
-    traits: "",
-    stats: "",
+    name: String,
+    sales: Number,
+    img: String,
+    site: String,
+    slug: String,
+    description: String,
+    date_created: String,
   });
 
   //handleChange function to sync input with state
@@ -26,12 +27,13 @@ const Index = (props) => {
     props.createBookmarks(newForm);
     // reset the form to empty
     setNewForm({
-      name: "",
-      image_url: "",
-      external_link: "",
-      description: "",
-      traits: "",
-      stats: "",
+      name: String,
+      sales: Number,
+      img: String,
+      site: String,
+      slug: String,
+      description: String,
+      date_created: String,
     });
   };
 
@@ -45,17 +47,31 @@ const Index = (props) => {
         onChange={handleChange}
       />
       <input
+        type="number"
+        value={newForm.sales}
+        name="sales"
+        placeholder="Sales"
+        onChange={handleChange}
+      />
+      <input
         type="text"
-        value={newForm.image_url}
+        value={newForm.img}
         name="image"
         placeholder="Image URL"
         onChange={handleChange}
       />
       <input
         type="text"
-        value={newForm.external_link}
-        name="external link"
+        value={newForm.site}
+        name="site"
         placeholder="External Link"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        value={newForm.slug}
+        name="slug"
+        placeholder="Slug"
         onChange={handleChange}
       />
       <input
@@ -67,16 +83,9 @@ const Index = (props) => {
       />
       <input
         type="text"
-        value={newForm.traits}
-        name="traits"
-        placeholder="Traits"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        value={newForm.stats}
-        name="stats"
-        placeholder="Stats"
+        value={newForm.date_created}
+        name="date_created"
+        placeholder="Date Created"
         onChange={handleChange}
       />
       <input class="btn btn-success" type="submit" value="Add to your brag" />
