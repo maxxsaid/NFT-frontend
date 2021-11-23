@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import Login from "./user/Login";
-import Signup from "./user/Signup";
 
 function Home() {
+  const getAssets = async () => {
+    const response = await fetch("https://nft-backennd.herokuapp.com/assets");
+    const data = response.json();
+    console.log(data);
+  };
   return (
     <div className="home">
       <div className="loginHome">
