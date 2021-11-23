@@ -24,7 +24,7 @@ const Index = (props) => {
     // prevent the page from refreshing
     event.preventDefault();
     // pass the form data to createBookmarks function
-    props.createBookmarks(newForm);
+    props.createNfts(newForm);
     // reset the form to empty
     setNewForm({
       name: String,
@@ -101,13 +101,13 @@ const Index = (props) => {
             <div key={nft._id} className="nft">
               <Link className="link-dark" to={`/nfts/${nft._id}`}>
                 <h2>{nft.name}</h2>
-                <img src={nft.name} alt="image url" />
-                <a href={nft.external_link} target="_blank">
+                <img src={nft.img} alt="image url" />
+                <a href={nft.site} target="_blank">
                   <h2>External Link</h2>
                 </a>
+                <p>{nft.slug}</p>
                 <p>{nft.description}</p>
-                <p>{nft.traits}</p>
-                <p>{nft.stats}</p>
+                <p>{nft.date_created}</p>
               </Link>
             </div>
           );
