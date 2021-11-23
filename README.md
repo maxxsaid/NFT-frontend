@@ -7,7 +7,7 @@ This application provides the user a storage of all the NFTs. User gets to sign 
 # Roles
 
 - Backend - John,Rashad,Ray
-- Frontend - Max,Rashad,Ray
+- Frontend - Max,Rashad
 - Frontend Repo Owner - Max
 - Backend Repo Owner - John
 - Styling - Max
@@ -23,23 +23,20 @@ This application provides the user a storage of all the NFTs. User gets to sign 
 
 # Tech
 
-- Mongoose
-- Express
 - react-router-dom
 - sass
-- cors
-- dotenv
-- morgan
 
 # Components
 
 - Header
 - Main
+- Nft
 
 # Pages
 
+- User
+  - Login (log in form)
+  - Signup (sign up form)
 - Home (signup/login button, carousel of nfts)
-- Login (log in form)
-- Signup (sign up form)
 - Index (logged in accounts list of nfts)
 - Show (page of an individual nft with details)
