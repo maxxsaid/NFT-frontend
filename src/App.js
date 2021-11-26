@@ -1,4 +1,5 @@
 import "./styles.scss";
+import "./components/styles/style.css";
 import React from "react";
 import Header from "./components/Header";
 import Signup from "./pages/user/Signup";
@@ -11,7 +12,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   // State to hold our list of people
   const [assets, setAsset] = useState(null);
-  const URL = "https://nft-backennd.herokuapp.com/assets";
+  const URL = "http://localhost:3001/assets";
   // function to get updated list of people
   const getAssets = async () => {
     // make the api call
@@ -22,14 +23,14 @@ function App() {
     setAsset(data);
   };
   // function that will later be passed data from our new/create form and make the post request to create a new person
-  const createAsset = async (person) => {
+  const createAsset = async (data) => {
     // make the post request to our API
     await fetch(URL, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(person),
+      body: JSON.stringify(data),
     });
     // get updated list of people
     getAssets();
@@ -84,7 +85,6 @@ function App() {
         />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/index" element={<Index />} />
       </Routes>
     </div>
   );

@@ -4,13 +4,8 @@ import { Link } from "react-router-dom";
 const Index = (props) => {
   // state to hold form data
   const [newForm, setNewForm] = useState({
-    name: String,
-    sales: Number,
-    img: String,
-    site: String,
-    slug: String,
-    description: String,
-    date_created: String,
+    address: String,
+    token: String,
   });
 
   //handleChange function to sync input with state
@@ -30,13 +25,8 @@ const Index = (props) => {
     props.createAsset(newForm);
     // reset the form to empty
     setNewForm({
-      name: "",
-      sales: "",
-      img: "",
-      site: "",
-      slug: "",
-      description: "",
-      date_created: "",
+      address: "",
+      token: "",
     });
   };
 
@@ -44,47 +34,19 @@ const Index = (props) => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        value={newForm.name}
-        name="name"
-        placeholder="name"
+        value={newForm.address}
+        name="address"
+        placeholder="address"
         onChange={handleChange}
       />
       <input
         type="text"
-        value={newForm.sales}
-        name="sales"
-        placeholder="sales"
+        value={newForm.token}
+        name="token"
+        placeholder="token"
         onChange={handleChange}
       />
-      <input
-        type="text"
-        value={newForm.img}
-        name="img"
-        placeholder="img"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        value={newForm.site}
-        name="site"
-        placeholder="site"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        value={newForm.slug}
-        name="slug"
-        placeholder="slug"
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        value={newForm.description}
-        name="description"
-        placeholder="description"
-        onChange={handleChange}
-      />
-      <input type="submit" value="Create Asset" />
+      <input type="submit" value="Add Asset" />
     </form>
   );
 
