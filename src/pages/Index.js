@@ -98,7 +98,7 @@ const Index = (props) => {
               <Link to={`/${asset._id}`}>
                 <h1>{asset.name}</h1>
               </Link>
-              <img src={asset.image} alt={asset.name} />
+              <img src={asset.img} alt={asset.name} />
               <h3>{asset.title}</h3>
             </div>
           );
