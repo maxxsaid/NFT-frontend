@@ -1,0 +1,14 @@
+.asset {
+  text-align: center;
+  width: 5vw;
+  padding: 4vw;
+}
+
+.assets {
+  display: flex;
+  flex-wrap: wrap;
+}
+.assetName {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1vw;
+}

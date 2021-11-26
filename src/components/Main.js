@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
+import "./styles/style.css";
 const Main = (props) => {
   // State to hold our list of people
   const [assets, setAsset] = useState(null);

@@ -27,7 +27,7 @@ const Index = (props) => {
     // prevent the page from refreshing
     event.preventDefault();
     // pass the form data to createPeople function
-    props.createPeople(newForm);
+    props.createAsset(newForm);
     // reset the form to empty
     setNewForm({
       name: "",
@@ -73,8 +73,8 @@ const Index = (props) => {
       <input
         type="text"
         value={newForm.slug}
-        name="title"
-        placeholder="title"
+        name="slug"
+        placeholder="slug"
         onChange={handleChange}
       />
       <input
@@ -90,20 +90,20 @@ const Index = (props) => {
 
   if (props.assets) {
     return (
-      <section>
+      <>
         {form}
-        {props.assets.map((asset) => {
-          return (
-            <div key={asset._id} className="asset">
-              <Link to={`/${asset._id}`}>
-                <h1>{asset.name}</h1>
-              </Link>
-              <img src={asset.img} alt={asset.name} />
-              <h3>{asset.title}</h3>
-            </div>
-          );
-        })}
-      </section>
+        <div className="assets">
+          {props.assets.map((asset) => {
+            return (
+              <div key={asset._id} className="asset">
+                <Link to={`/${asset._id}`}>
+                  <img src={asset.img} alt={asset.name} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </>
     );
   } else {
     return (

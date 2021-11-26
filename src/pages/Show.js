@@ -24,7 +24,7 @@ const Show = (props) => {
       const nft = props.assets.find((p) => p._id === id);
       setEditForm(nft);
     }
-  }, [props.assets]);
+  }, [props.assets, id]);
 
   if (props.assets) {
     // grab the target site from the bookmarks array
@@ -49,17 +49,14 @@ const Show = (props) => {
       // redirect bookmarks back to index
       navigate("/");
     };
-    const removeAsset = () => {
-      props.deleteNfts(asset._id);
-      navigate("/");
-    };
+
     const form = (
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={editForm.name}
           name="name"
-          placeholder="Name"
+          placeholder="name"
           onChange={handleChange}
         />
         <input
@@ -72,29 +69,29 @@ const Show = (props) => {
         <input
           type="text"
           value={editForm.site}
-          name="external link"
-          placeholder="External Link"
+          name="site"
+          placeholder="site"
           onChange={handleChange}
         />
         <input
           type="text"
           value={editForm.description}
           name="description"
-          placeholder="Description"
+          placeholder="description"
           onChange={handleChange}
         />
         <input
           type="text"
           value={editForm.slug}
-          name="traits"
-          placeholder="Traits"
+          name="slug"
+          placeholder="slug"
           onChange={handleChange}
         />
         <input
           type="text"
           value={editForm.date_created}
-          name="stats"
-          placeholder="Stats"
+          name="date_created"
+          placeholder="date_created"
           onChange={handleChange}
         />
         <input class="btn btn-warning" type="submit" value="Update brag" />
@@ -105,7 +102,7 @@ const Show = (props) => {
       <div className="site">
         <h2>{asset.name}</h2>
         <img src={asset.img} alt="url" />
-        <a href={asset.sales} target="_blank">
+        <a href={asset.sales} target="blank">
           <h2>Link to Site</h2>
         </a>
         <p>{asset.slug}</p>
