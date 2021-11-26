@@ -21,8 +21,8 @@ const Show = (props) => {
   // useEffect to set state to the existing nft, when the data is available
   useEffect(() => {
     if (props.assets) {
-      const nft = props.assets.find((p) => p._id === id);
-      setEditForm(nft);
+      const asset = props.assets.find((p) => p._id === id);
+      setEditForm(asset);
     }
   }, [props.assets, id]);
 
@@ -45,7 +45,7 @@ const Show = (props) => {
       // prevent the refresh
       event.preventDefault();
       // pass the form data to updateNfts
-      props.updateNfts(editForm, asset._id);
+      props.updateAsset(editForm, asset._id);
       // redirect bookmarks back to index
       navigate("/");
     };
@@ -75,9 +75,9 @@ const Show = (props) => {
         />
         <input
           type="text"
-          value={editForm.description}
-          name="description"
-          placeholder="description"
+          value={editForm.img}
+          name="img"
+          placeholder="img"
           onChange={handleChange}
         />
         <input
@@ -109,7 +109,7 @@ const Show = (props) => {
         <p>{asset.description}</p>
         <p>{asset.date_created}</p>
         {form}
-        <button class="btn btn-danger" onClick={props.remoteAsset}>
+        <button class="btn btn-danger" onClick={props.deleteAsset}>
           DELETE NFT
         </button>
       </div>

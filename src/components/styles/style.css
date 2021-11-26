@@ -3,7 +3,9 @@
   width: 5vw;
   padding: 4vw;
 }
-
+.asset:hover {
+  transform: scale(1.2) translateX(-0.5vw);
+}
 .assets {
   display: flex;
   flex-wrap: wrap;
