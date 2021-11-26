@@ -3,12 +3,7 @@ const Nfts = (props) => {
   const [nfts, setNfts] = React.useState(null);
 
   const getNfts = async () => {
-    const response = await fetch(props.URL + "nft/", {
-      method: "get",
-      headers: {
-        Authorization: `Bearer ${props.tokens.access}`,
-      },
-    });
+    const response = await fetch(props.URL);
     const data = await response.json();
     console.log(data);
     setNfts(data);

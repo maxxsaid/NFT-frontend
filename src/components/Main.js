@@ -1,59 +1,82 @@
-// import { useEffect, useState } from "react";
-import { Route } from "react-router-dom";
-import React from "react";
-import Nfts from "./Nft";
-import Login from "../pages/user/Login";
-
-function Main(props) {
-  const [token, setToken] = React.useState({});
-
-  const URL = "https://nft-backennd.herokuapp.com/";
-
-  const getToken = async (un, pw) => {
-    const response = await fetch(URL + "api/token/", {
+import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Index from "../pages/Index";
+import Show from "../pages/Show";
+const Main = (props) => {
+  // State to hold our list of people
+  const [assets, setAsset] = useState(null);
+  const URL = "https://nft-backennd.herokuapp.com/assets";
+  // function to get updated list of people
+  const getAssets = async () => {
+    // make the api call
+    const response = await fetch(URL);
+    // turn the response in an object
+    const data = await response.json();
+    // set the state to the api data
+    setAsset(data);
+  };
+  // function that will later be passed data from our new/create form and make the post request to create a new person
+  const createAsset = async (person) => {
+    // make the post request to our API
+    await fetch(URL, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: un, password: pw }),
+      body: JSON.stringify(person),
     });
-    const data = await response.json();
-    console.log(data);
-    setToken(data);
-    localStorage.setItem("token", JSON.stringify(data));
+    // get updated list of people
+    getAssets();
   };
 
-  React.useEffect(() => {
-    const possibleToken = JSON.parse(localStorage.getItem("token"));
-    if (possibleToken) {
-      setToken(possibleToken);
-    }
+  // function to update a person
+  const updateAsset = async (person, id) => {
+    // make the put request
+    await fetch(URL + id, {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(person),
+    });
+    // update the list of people
+    getAssets();
+  };
+
+  // create function to delete a person
+  const deleteAsset = async (id) => {
+    // make the delete request
+    await fetch(URL + id, {
+      method: "delete",
+    });
+    // update the list of people
+    getAssets();
+  };
+
+  useEffect(() => {
+    getAssets();
   }, []);
 
-  React.useEffect(() => {
-    if (token.access) {
-      props.history.push("/index");
-    } else {
-      props.history.push("/user/signup");
-    }
-  }, [token.access]);
-
   return (
-    <div className="main">
-      <h1>NFT App</h1>
-
-      <Route
-        exact
-        path="/"
-        render={(rp) => <Login getToken={getToken} {...rp} />}
-      />
-
-      <Route
-        path="/index"
-        render={(rp) => <Nfts tokens={token} URL={URL} {...rp} />}
-      />
-    </div>
+    <main>
+      <Routes>
+        <Route
+          path="/"
+          element={<Index assets={assets} createAsset={createAsset} />}
+        />
+        <Route
+          path="/:id"
+          element={
+            <Show
+              assets={assets}
+              updateAsset={updateAsset}
+              deleteAsset={deleteAsset}
+            />
+          }
+        />
+      </Routes>
+    </main>
   );
-}
+};
 
 export default Main;

@@ -15,25 +15,28 @@ const Index = (props) => {
 
   //handleChange function to sync input with state
   const handleChange = (event) => {
+    // make a copy of state
     const newState = { ...newForm };
+    // update the newState
     newState[event.target.name] = event.target.value;
+    // update the state
     setNewForm(newState);
   };
   // handleSubmit function for when form is submitted
   const handleSubmit = (event) => {
     // prevent the page from refreshing
     event.preventDefault();
-    // pass the form data to createBookmarks function
-    props.createNfts(newForm);
+    // pass the form data to createPeople function
+    props.createPeople(newForm);
     // reset the form to empty
     setNewForm({
-      name: String,
-      sales: Number,
-      img: String,
-      site: String,
-      slug: String,
-      description: String,
-      date_created: String,
+      name: "",
+      sales: "",
+      img: "",
+      site: "",
+      slug: "",
+      description: "",
+      date_created: "",
     });
   };
 
@@ -43,72 +46,60 @@ const Index = (props) => {
         type="text"
         value={newForm.name}
         name="name"
-        placeholder="Name"
+        placeholder="name"
         onChange={handleChange}
       />
       <input
-        type="number"
+        type="text"
         value={newForm.sales}
         name="sales"
-        placeholder="Sales"
+        placeholder="sales"
         onChange={handleChange}
       />
       <input
         type="text"
         value={newForm.img}
-        name="image"
-        placeholder="Image URL"
+        name="img"
+        placeholder="img"
         onChange={handleChange}
       />
       <input
         type="text"
         value={newForm.site}
         name="site"
-        placeholder="External Link"
+        placeholder="site"
         onChange={handleChange}
       />
       <input
         type="text"
         value={newForm.slug}
-        name="slug"
-        placeholder="Slug"
+        name="title"
+        placeholder="title"
         onChange={handleChange}
       />
       <input
         type="text"
         value={newForm.description}
         name="description"
-        placeholder="Description"
+        placeholder="description"
         onChange={handleChange}
       />
-      <input
-        type="text"
-        value={newForm.date_created}
-        name="date_created"
-        placeholder="Date Created"
-        onChange={handleChange}
-      />
-      <input class="btn btn-success" type="submit" value="Add to your brag" />
+      <input type="submit" value="Create Asset" />
     </form>
   );
 
-  if (props.nfts) {
+  if (props.assets) {
     return (
       <section>
         {form}
-        {props.nfts.map((nft) => {
+        {props.assets.map((asset) => {
           return (
-            <div key={nft._id} className="nft">
-              <Link className="link-dark" to={`/nfts/${nft._id}`}>
-                <h2>{nft.name}</h2>
-                <img src={nft.img} alt="image url" />
-                <a href={nft.site} target="_blank">
-                  <h2>External Link</h2>
-                </a>
-                <p>{nft.slug}</p>
-                <p>{nft.description}</p>
-                <p>{nft.date_created}</p>
+            <div key={asset._id} className="asset">
+              <Link to={`/${asset._id}`}>
+                <h1>{asset.name}</h1>
               </Link>
+              <img src={asset.image} alt={asset.name} />
+              <h3>{asset.title}</h3>
             </div>
           );
         })}
@@ -118,7 +109,7 @@ const Index = (props) => {
     return (
       <section>
         {form}
-        <h1 className="loading">Loading...</h1>
+        <h1>Loading...</h1>
       </section>
     );
   }

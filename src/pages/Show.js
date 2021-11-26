@@ -8,21 +8,27 @@ const Show = (props) => {
   const params = useParams();
   // grab the id from params
   const id = params.id;
-  // grab nfts from props
-  const nfts = props.nfts;
   // create state for form
-  const [editForm, setEditForm] = useState({});
+  const [editForm, setEditForm] = useState({
+    name: String,
+    sales: Number,
+    img: String,
+    site: String,
+    slug: String,
+    description: String,
+    date_created: String,
+  });
   // useEffect to set state to the existing nft, when the data is available
   useEffect(() => {
-    if (props.nfts) {
-      const nft = nfts.find((p) => p._id === id);
+    if (props.assets) {
+      const nft = props.assets.find((p) => p._id === id);
       setEditForm(nft);
     }
-  }, [props.nft]);
+  }, [props.assets]);
 
-  if (props.nft) {
+  if (props.assets) {
     // grab the target site from the bookmarks array
-    const nft = nfts.find((p) => p._id === id);
+    const asset = props.assets.find((p) => p._id === id);
 
     // handleChange function for form
     const handleChange = (event) => {
@@ -39,63 +45,56 @@ const Show = (props) => {
       // prevent the refresh
       event.preventDefault();
       // pass the form data to updateNfts
-      props.updateNfts(editForm, bookmark._id);
+      props.updateNfts(editForm, asset._id);
       // redirect bookmarks back to index
       navigate("/");
     };
-    const removeNfts = () => {
-      props.deleteNfts(nft._id);
+    const removeAsset = () => {
+      props.deleteNfts(asset._id);
       navigate("/");
     };
     const form = (
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={newForm.name}
+          value={editForm.name}
           name="name"
           placeholder="Name"
           onChange={handleChange}
         />
         <input
-          type="number"
-          value={newForm.sales}
-          name="sales"
-          placeholder="Sales"
-          onChange={handleChange}
-        />
-        <input
           type="text"
-          value={newForm.img}
+          value={editForm.sales}
           name="image"
           placeholder="Image URL"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.site}
-          name="site"
+          value={editForm.site}
+          name="external link"
           placeholder="External Link"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.slug}
-          name="slug"
-          placeholder="Slug"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.description}
+          value={editForm.description}
           name="description"
           placeholder="Description"
           onChange={handleChange}
         />
         <input
           type="text"
-          value={newForm.date_created}
-          name="date_created"
-          placeholder="Date Created"
+          value={editForm.slug}
+          name="traits"
+          placeholder="Traits"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          value={editForm.date_created}
+          name="stats"
+          placeholder="Stats"
           onChange={handleChange}
         />
         <input class="btn btn-warning" type="submit" value="Update brag" />
@@ -104,16 +103,16 @@ const Show = (props) => {
 
     return (
       <div className="site">
-        <h2>{nft.name}</h2>
-        <img src={nft.img} alt="image url" />
-        <a href={nft.site} target="_blank">
-          <h2>External Link</h2>
+        <h2>{asset.name}</h2>
+        <img src={asset.img} alt="url" />
+        <a href={asset.sales} target="_blank">
+          <h2>Link to Site</h2>
         </a>
-        <p>{nft.slug}</p>
-        <p>{nft.description}</p>
-        <p>{nft.date_created}</p>
+        <p>{asset.slug}</p>
+        <p>{asset.description}</p>
+        <p>{asset.date_created}</p>
         {form}
-        <button class="btn btn-danger" onClick={removeNft}>
+        <button class="btn btn-danger" onClick={props.remoteAsset}>
           DELETE NFT
         </button>
       </div>
