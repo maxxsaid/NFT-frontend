@@ -12,7 +12,7 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   // State to hold our list of people
   const [assets, setAsset] = useState(null);
-  const URL = "https://nft-backennd.herokuapp.com/";
+  const URL = "https://nft-backennd.herokuapp.com/assets";
   // function to get updated list of people
   const getAssets = async () => {
     // make the api call
