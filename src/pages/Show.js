@@ -109,7 +109,13 @@ const Show = (props) => {
         <p>{asset.description}</p>
         <p>{asset.date_created}</p>
         {form}
-        <button class="btn btn-danger" onClick={props.deleteAsset}>
+        <button
+          class="btn btn-danger"
+          onClick={() => {
+            props.deleteAsset(id);
+            navigate("/");
+          }}
+        >
           DELETE NFT
         </button>
       </div>

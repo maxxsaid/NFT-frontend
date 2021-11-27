@@ -7,17 +7,18 @@ import Login from "./pages/user/Login";
 import Index from "./pages/Index";
 import Show from "./pages/Show";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   // State to hold our list of people
   const [assets, setAsset] = useState(null);
-  const URL = "https://nft-backennd.herokuapp.com/assets";
+  const URL = "http://localhost:3001/assets/";
   // function to get updated list of people
   const getAssets = async () => {
     // make the api call
     const response = await fetch(URL);
     // turn the response in an object
+    console.log(response);
     const data = await response.json();
     // set the state to the api data
     setAsset(data);
@@ -46,17 +47,17 @@ function App() {
       },
       body: JSON.stringify(asset),
     });
-    // update the list of people
+    // update the list
     getAssets();
   };
 
-  // create function to delete a person
+  // create function to delete
   const deleteAsset = async (id) => {
     // make the delete request
     await fetch(URL + id, {
       method: "delete",
     });
-    // update the list of people
+    // update the list
     getAssets();
   };
 
