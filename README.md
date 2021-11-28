@@ -1,12 +1,12 @@
-#### NFT App
+#### Brag
 
 ## Summary
 
-This application provides the user a storage of all the NFTs. User gets to sign in, add NFTs in their own collection, access each individual NFT and read about it more indepth or delete it. The main home page will have a carousel of random NFTs. User will also be able to browse to see other NFTs. The goal is to make an "instagram" for NFTs.
+A NFT wishlist. This application provides the user a storage of all the NFTs. User gets to add any NFT they want from other websites by proving the address and a token of that NFT. By clicking on an added NFT, user can edit and delete the NFT. Home page has a log in and a sign up button that takes the user to those pages. Home page also has a carousel of NFTs.
 
 # Roles
 
-- Backend - John,Rashad,Ray
+- Backend - John,Rashad
 - Frontend - Max,Rashad
 - Frontend Repo Owner - Max
 - Backend Repo Owner - John
@@ -14,12 +14,17 @@ This application provides the user a storage of all the NFTs. User gets to sign 
 
 # Models
 
-- name
-- image_url
-- external link
-- description
-- traits
-- stats
+- Index Page
+  - address
+  - token
+- Show Page
+  - name
+  - sales
+  - img
+  - site
+  - slug
+  - description
+  - date_created
 
 # Tech
 
@@ -29,8 +34,6 @@ This application provides the user a storage of all the NFTs. User gets to sign 
 # Components
 
 - Header
-- Main
-- Nft
 
 # Pages
 
@@ -38,5 +41,21 @@ This application provides the user a storage of all the NFTs. User gets to sign 
   - Login (log in form)
   - Signup (sign up form)
 - Home (signup/login button, carousel of nfts)
-- Index (logged in accounts list of nfts)
+- Index (list of nfts)
+  - create/add
 - Show (page of an individual nft with details)
+  - update
+  - delete
+
+# User Stories
+
+- user can create their own collection of NFTs
+- user can click on the NFT and it will take the user to the show page
+- user can edit/delete a NFT
+- user can go back to the index page to view all entries by clicking UPDATE
+- user can go back to home page by clicking the logo
+
+# Challenges
+
+- responsive design
+- user auth
