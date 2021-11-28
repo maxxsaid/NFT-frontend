@@ -102,7 +102,7 @@ const Show = (props) => {
       <div className="site">
         <h2>{asset.name}</h2>
         <img src={asset.img} alt="url" />
-        <a href={asset.sales} target="blank">
+        <a href={asset.site} target="blank">
           <h2>Link to Site</h2>
         </a>
         <p>{asset.slug}</p>
