@@ -1,5 +1,4 @@
 import "./styles.scss";
-import "./components/styles/style.css";
 import React from "react";
 import Header from "./components/Header";
 import Signup from "./pages/user/Signup";

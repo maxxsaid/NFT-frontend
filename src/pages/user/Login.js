@@ -16,7 +16,7 @@ const Login = (props) => {
 
   return (
     <div className="loginPage">
-      <div className="mb-3">
+      <div className="mb-2">
         <label for="username" className="form-label">
           <h4>Username</h4>
         </label>
@@ -27,7 +27,7 @@ const Login = (props) => {
           ref={username}
         />
       </div>
-      <div className="mb-3">
+      <div className="mb-2">
         <label for="password" className="form-label">
           <h4>Password</h4>
         </label>
@@ -39,7 +39,7 @@ const Login = (props) => {
         />
         <div className="btnloginpage">
           <button className="btn btn-primary" onClick={handleLogin}>
-            Login
+            Log In
           </button>
         </div>
       </div>

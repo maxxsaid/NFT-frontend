@@ -54,7 +54,7 @@ function Signup() {
               </div>
               <Link to="/login">
                 <button type="submit" className="btn btn-success">
-                  Login
+                  Log In
                 </button>
               </Link>
             </div>

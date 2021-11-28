@@ -51,8 +51,9 @@ const Show = (props) => {
     };
 
     const form = (
-      <form onSubmit={handleSubmit}>
+      <form className="mb-3" onSubmit={handleSubmit}>
         <input
+          className="form-control"
           type="text"
           value={editForm.name}
           name="name"
@@ -60,6 +61,7 @@ const Show = (props) => {
           onChange={handleChange}
         />
         <input
+          className="form-control"
           type="text"
           value={editForm.sales}
           name="image"
@@ -67,6 +69,7 @@ const Show = (props) => {
           onChange={handleChange}
         />
         <input
+          className="form-control"
           type="text"
           value={editForm.site}
           name="site"
@@ -74,6 +77,7 @@ const Show = (props) => {
           onChange={handleChange}
         />
         <input
+          className="form-control"
           type="text"
           value={editForm.img}
           name="img"
@@ -81,6 +85,7 @@ const Show = (props) => {
           onChange={handleChange}
         />
         <input
+          className="form-control"
           type="text"
           value={editForm.slug}
           name="slug"
@@ -88,26 +93,29 @@ const Show = (props) => {
           onChange={handleChange}
         />
         <input
+          className="form-control"
           type="text"
           value={editForm.date_created}
           name="date_created"
           placeholder="date_created"
           onChange={handleChange}
         />
-        <input class="btn btn-warning" type="submit" value="Update brag" />
+        <input class="btn btn-warning" type="submit" value="UPDATE" />
       </form>
     );
 
     return (
       <div className="site">
-        <h2>{asset.name}</h2>
-        <img src={asset.img} alt="url" />
-        <a href={asset.site} target="blank">
-          <h2>Link to Site</h2>
-        </a>
-        <p>{asset.slug}</p>
-        <p>{asset.description}</p>
-        <p>{asset.date_created}</p>
+        <div className="showmain">
+          <h3>{asset.name}</h3>
+          <img src={asset.img} alt="url" />
+          <a href={asset.site} target="blank">
+            <h3>Link to Site</h3>
+          </a>
+          <p>{asset.slug}</p>
+          <p>{asset.description}</p>
+          <p>{asset.date_created}</p>
+        </div>
         {form}
         <button
           class="btn btn-danger"
@@ -116,7 +124,7 @@ const Show = (props) => {
             navigate("/assets");
           }}
         >
-          DELETE NFT
+          DELETE
         </button>
       </div>
     );

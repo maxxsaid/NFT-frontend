@@ -31,8 +31,9 @@ const Index = (props) => {
   };
 
   const form = (
-    <form onSubmit={handleSubmit}>
+    <form className="mb-3" onSubmit={handleSubmit}>
       <input
+        className="form-control"
         type="text"
         value={newForm.address}
         name="address"
@@ -40,13 +41,14 @@ const Index = (props) => {
         onChange={handleChange}
       />
       <input
+        className="form-control"
         type="text"
         value={newForm.token}
         name="token"
         placeholder="token"
         onChange={handleChange}
       />
-      <input type="submit" value="Add Asset" />
+      <input className="btn btn-primary" type="submit" value="Add Asset" />
     </form>
   );
 

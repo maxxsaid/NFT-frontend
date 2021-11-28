@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Nunito&display=swap");
 * {
   margin: 0;
 }
@@ -22,24 +22,26 @@ $darkblue: rgb(9, 21, 64);
 
 body {
   @include white-bg-blue-text();
+  font-family: "Nunito", sans-serif;
 }
+
 @media (min-width: 600px) {
   nav {
     @include white-bg-blue-text;
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin: 4vw;
 
     a {
       text-decoration: none;
       color: $lightblue;
       div {
-        margin: 10px;
+        margin: 6vw;
       }
     }
   }
   .logo {
-    font-size: 5em;
+    font-size: 6em;
     font-family: "Comfortaa", cursive;
   }
   .loginHome {
@@ -49,7 +51,7 @@ body {
     margin: 40px;
   }
   .carou {
-    margin: 50px 100px;
+    margin: 5vw 13vw;
     border: 9px solid $skyblue;
     border-radius: 10px;
   }
@@ -94,6 +96,57 @@ body {
       margin: 14px;
       font-size: 1.1em;
     }
+  }
+  .asset {
+    text-align: center;
+    width: 5vw;
+    padding: 4.2vw;
+  }
+  .asset:hover {
+    transform: scale(1.2) translateX(-0.5vw);
+  }
+  .assets {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .assetName {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1vw;
+  }
+  .enterbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-control {
+    width: 20vw;
+    text-align: center;
+  }
+  .mb-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vw;
+  }
+  .showmain {
+    h3 {
+      text-align: center;
+      padding: 1.6vw;
+    }
+    p {
+      text-align: center;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 13%;
+    }
+  }
+  .btn-danger {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -165,5 +218,60 @@ body {
       margin: 14px;
       font-size: 1.1em;
     }
+  }
+  .asset {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 37%;
+  }
+  .assets {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .assetName {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1vw;
+  }
+  .enterbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5vw;
+  }
+  .form-control {
+    width: 30vw;
+    text-align: center;
+  }
+  .mb-3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 3vw;
+  }
+  .showmain {
+    h3 {
+      text-align: center;
+      padding: 1.6vw;
+    }
+    p {
+      text-align: center;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 45%;
+    }
+  }
+  .btn-warning {
+    margin: 7vw;
+  }
+  .btn-danger {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10vw;
   }
 }

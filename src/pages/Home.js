@@ -8,18 +8,22 @@ function Home() {
       <div className="loginHome">
         <Link to="/signup">
           <button type="submit" className="btn btn-outline-primary">
-            Signup
+            Sign Up
           </button>
         </Link>
         <Link to="/login">
           <button type="submit" className="btn btn-outline-primary">
-            Login
+            Log In
           </button>
         </Link>
       </div>
-      <Link to="/assets">
-        <button className="assets-link">Checkout Your NFT Wishlist</button>
-      </Link>
+      <div className="enterbtn">
+        <Link to="/assets">
+          <button className="btn btn-success">
+            Checkout Your NFT Wishlist
+          </button>
+        </Link>
+      </div>
       <div className="carou">
         <div
           id="carouselExampleIndicators"
