@@ -129,7 +129,7 @@ const Show = (props) => {
       </div>
     );
   } else {
-    return <h1>No NFTs</h1>;
+    return <h2>No NFTs</h2>;
   }
 };
 

@@ -34,7 +34,7 @@
 //       <button onClick={handleNew}>New NFT</button>
 //       <ul>
 //         {nfts && nfts.length > 0
-//           ? nfts.map((nft) => <h1>{nft.item}</h1>)
+  //        // ? nfts.map((nft) => <h1>{nft.item}</h1>)
 //           : null}
 //       </ul>
 //     </>

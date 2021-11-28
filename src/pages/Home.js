@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Login from "./user/Login";
-import Signup from "./user/Signup";
 
 function Home() {
   return (
