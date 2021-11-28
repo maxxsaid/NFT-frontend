@@ -17,6 +17,9 @@ function Home() {
           </button>
         </Link>
       </div>
+      <Link to="/assets">
+        <button className="assets-link">Checkout Your NFT Wishlist</button>
+      </Link>
       <div className="carou">
         <div
           id="carouselExampleIndicators"

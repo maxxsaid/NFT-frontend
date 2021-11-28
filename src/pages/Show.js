@@ -47,7 +47,7 @@ const Show = (props) => {
       // pass the form data to updateNfts
       props.updateAsset(editForm, asset._id);
       // redirect bookmarks back to index
-      navigate("/");
+      navigate("/assets");
     };
 
     const form = (
@@ -113,7 +113,7 @@ const Show = (props) => {
           class="btn btn-danger"
           onClick={() => {
             props.deleteAsset(id);
-            navigate("/");
+            navigate("/assets");
           }}
         >
           DELETE NFT

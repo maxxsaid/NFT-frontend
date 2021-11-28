@@ -6,13 +6,14 @@ import Signup from "./pages/user/Signup";
 import Login from "./pages/user/Login";
 import Index from "./pages/Index";
 import Show from "./pages/Show";
+import Home from "./pages/Home";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   // State to hold our list of people
   const [assets, setAsset] = useState(null);
-  const URL = "https://nft-backennd.herokuapp.com/assets";
+  const URL = "https://nft-backennd.herokuapp.com/";
   // function to get updated list of people
   const getAssets = async () => {
     // make the api call
@@ -70,8 +71,9 @@ function App() {
       <Header />
 
       <Routes>
+        <Route exact path="/" element={<Home />}></Route>
         <Route
-          path="/"
+          path="/assets"
           element={<Index assets={assets} createAsset={createAsset} />}
         />
         <Route
