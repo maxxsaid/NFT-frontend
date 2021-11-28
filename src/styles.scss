@@ -147,6 +147,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10vw;
   }
 }
 
@@ -221,9 +222,9 @@ body {
   }
   .asset {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 37%;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    width: 34%;
   }
   .assets {
     display: flex;
